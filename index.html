@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Leadership & Growth Programs — Ishwor Shrestha</title>
+  <meta name="description" content="Transformative leadership and student development programs blending modern skills and timeless wisdom." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="programs.html">Programs</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="past-trainings.html">Past Trainings</a>
+        <a href="#register" class="btn-cta">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Transform Your Leadership & Life</h1>
+        <p>Join our professional development programs blending modern strategies with timeless wisdom for students and educators.</p>
+        <div class="hero-ctas">
+          <a href="#register" class="btn-primary">Register Now</a>
+          <a href="announcements.html" class="btn-outline">See Current Programs</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/images/hero.jpg" alt="Leadership Training" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <section id="register" class="registration-section container">
+    <h2>Register for a Program</h2>
+    <p>Fill in your details below and we will get back to you.</p>
+
+    <form id="regForm"
+          action="https://script.google.com/macros/s/AKfycbxPB60tdVBQjG2PZ106sOuqeVcJqzNMILeFVupWhIoUeRWJ-skDdzAcr1h29CbDsmjsxg/exec"
+          method="POST"
+          target="hidden_iframe">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Full Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="Phone" />
+      </div>
+      <div class="form-group">
+        <select name="program" required>
+          <option value="" disabled selected>Select Program</option>
+          <option value="Student Leadership Bootcamp">Student Leadership Bootcamp</option>
+          <option value="Teacher Development Workshop">Teacher Development Workshop</option>
+          <option value="Parenting & Growth Seminar">Parenting & Growth Seminar</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Message (Optional)" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Submit Registration</button>
+      <div id="formStatus" class="form-status"></div>
+    </form>
+
+    <iframe name="hidden_iframe" style="display:none;" onload="formSubmitted()"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ishwor Shrestha. Contact: gamerking.yt0@gmail.com</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Dynamic Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Form submission success handler
+    function formSubmitted() {
+      const status = document.getElementById('formStatus');
+      status.textContent = '✅ Successfully submitted! We will contact you soon.';
+      document.getElementById('regForm').reset();
+      setTimeout(() => status.textContent = '', 5000);
+    }
+  </script>
+</body>
+</html>
