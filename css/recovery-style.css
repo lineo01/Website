@@ -1,0 +1,35 @@
+/* PROGRAMS>HTML */
+
+.programs-section { padding: 4rem 0; text-align: center; }
+.program-cards { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem; }
+.program-card { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex: 1 1 250px; max-width: 300px; transition: transform 0.3s; }
+.program-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+.program-card h2 { color: #1F3A60; font-family: 'Playfair Display', serif; margin-bottom: 0.5rem; }
+.program-card p { color: #333; font-size: 1rem; line-height: 1.5; }
+
+
+/* Announcement.html */
+.announcements-section { padding: 4rem 0; text-align: center; }
+.announcement-cards { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem; }
+.announcement-card { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); flex: 1 1 250px; max-width: 300px; transition: transform 0.3s; }
+.announcement-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+.announcement-card h2 { color: #1F3A60; font-family: 'Playfair Display', serif; margin-bottom: 0.5rem; font-size: 1.2rem; }
+.announcement-card p { font-size: 0.95rem; color: #333; }
+.announcement-card a { color: #D4AF37; text-decoration: none; font-weight: 600; }
+.announcement-card a:hover { text-decoration: underline; }
+
+
+.past-trainings-section { padding: 4rem 0; text-align: center; }
+.past-trainings-section h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #1F3A60; margin-bottom: 1rem; }
+.past-trainings-section p { margin-bottom: 2rem; color: #333; }
+.program-card { background-color: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); flex: 1 1 250px; max-width: 300px; margin-bottom: 1rem; transition: transform 0.3s, box-shadow 0.3s; }
+.program-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.program-card h3 { color: #1F3A60; margin-bottom: 0.5rem; font-size: 1.1rem; }
+.program-card p { font-size: 0.9rem; color: #666; }
+
+
+.contact-section { padding: 4rem 0; text-align: center; }
+.contact-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+.contact-card { background: #fff; padding: 1.5rem; border-radius: 10px; flex: 1 1 200px; max-width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.contact-card h3 { color: #1F3A60; font-family: 'Playfair Display', serif; margin-bottom: 0.5rem; }
+.contact-card p { color: #333; }
