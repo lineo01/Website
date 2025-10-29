@@ -9,20 +9,19 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <img src="assets/images/Main logo.jpg" alt="Logo" class="logo" />
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="programs.html">Programs</a>
-        <a href="announcements.html">Announcements</a>
-        <a href="past-trainings.html">Past Trainings</a>
-        <a href="#register" class="btn-cta">Register</a>
-      </nav>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container header-inner">
+    <img src="assets/images/Main logo.jpg" alt="Logo" class="logo">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="past-trainings.html">Past Trainings</a>
+      <a href="#register" class="btn-cta">Register</a>
+    </nav>
+    <div class="menu-toggle">☰</div>
+  </div>
+</header>
 
   <!-- Hero -->
   <section class="hero">
@@ -125,5 +124,14 @@
       document.querySelector('.nav').classList.toggle('open');
     }
   </script>
+  <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+</script>
+
 </body>
 </html>
