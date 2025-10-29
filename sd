@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Past Trainings — Ishwor Shrestha</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  .past-trainings-section { padding: 4rem 0; }
+  .past-trainings-section h1 {
+    font-family: 'Playfair Display', serif; color: #1F3A60;
+    margin-bottom: 0.5rem; text-align: center;
+  }
+  .past-trainings-section p {
+    color: #333; margin-bottom: 3rem; text-align: center; font-size: 1.1rem;
+  }
+
+  .training-card {
+    display: flex; background: #fff; border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08); overflow: hidden;
+    margin-bottom: 2rem; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid #EFCB68;
+  }
+
+  .training-card:hover {
+    transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .training-thumbnail {
+    flex: 0 0 200px; height: 200px; object-fit: cover; position: relative;
+    transition: transform 0.3s;
+  }
+
+  .training-card:hover .training-thumbnail {
+    transform: scale(1.05);
+  }
+
+  .training-content {
+    flex: 1; padding: 1.5rem 2rem; display: flex; flex-direction: column;
+    justify-content: space-between; position: relative;
+  }
+
+  .training-header h3 {
+    margin: 0 0 0.3rem; color: #1F3A60; font-size: 1.35rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem; color: #555; margin-bottom: 0.3rem; display: flex;
+    align-items: center; gap: 0.3rem;
+  }
+
+  .type {
+    font-size: 0.85rem; color: #EFCB68; font-weight: 600; margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.3rem;
+  }
+
+  .details {
+    max-height: 0; overflow: hidden; color: #333; font-size: 0.95rem; line-height: 1.5;
+    transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+
+  .training-card.active .details {
+    max-height: 300px; padding: 0.8rem 0 0; opacity: 1;
+  }
+
+  .date-location {
+    font-size: 0.8rem; color: #888; margin-top: 0.5rem;
+  }
+
+  /* Optional icons for subtitle and type */
+  .icon { width: 16px; height: 16px; display: inline-block; }
+
+  /* Responsive */
+  @media(max-width: 768px) {
+    .training-card { flex-direction: column; }
+    .training-thumbnail { width: 100%; height: 180px; }
+    .training-content { padding: 1rem 1.2rem; }
+    .training-header h3 { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <img src="assets/images/logo.png" alt="Logo" class="logo" />
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="past-trainings.html">Past Trainings</a>
+      <a href="index.html#register" class="btn-cta">Register</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container past-trainings-section">
+  <h1>Our Past Trainings</h1>
+  <p>Successful programs for students, educators, parents, corporates, and local communities.</p>
+
+  <div class="training-card" onclick="toggleCard(this)">
+    <img src="assets/images/studentsleadership.jpg" class="training-thumbnail" alt="Student Leadership Bootcamp">
+    <div class="training-content">
+      <div class="training-header">
+        <h3>Student Leadership Bootcamp - Batch 1</h3>
+        <div class="subtitle"><span class="icon">🎓</span> Angels Heart Secondary School</div>
+        <div class="type"><span class="icon">🧑‍🎓</span> Student Leadership</div>
+      </div>
+      <div class="details">
+        Interactive sessions for students to develop leadership, teamwork, problem-solving, and emotional intelligence. Included workshops, group activities, and community projects.
+      </div>
+      <div class="date-location">June 2025 | Kathmandu</div>
+    </div>
+  </div>
+
+  <div class="training-card" onclick="toggleCard(this)">
+    <img src="assets/images/Teacherstraining.jpg" class="training-thumbnail" alt="Teacher Development Workshop">
+    <div class="training-content">
+      <div class="training-header">
+        <h3>Teacher Development Workshop - Online</h3>
+        <div class="subtitle"><span class="icon">🏫</span> National Education Board</div>
+        <div class="type"><span class="icon">📚</span> Teacher Training</div>
+      </div>
+      <div class="details">
+        Empowering teachers with modern teaching strategies, classroom management techniques, and motivational tools to create engaging learning environments.
+      </div>
+      <div class="date-location">May 2025 | Virtual</div>
+    </div>
+  </div>
+
+  <div class="training-card" onclick="toggleCard(this)">
+    <img src="assets/images/parenting-seminar.jpg" class="training-thumbnail" alt="Parenting Seminar">
+    <div class="training-content">
+      <div class="training-header">
+        <h3>Parenting & Growth Seminar</h3>
+        <div class="subtitle"><span class="icon">🏠</span> Community Learning Center</div>
+        <div class="type"><span class="icon">👪</span> Parenting</div>
+      </div>
+      <div class="details">
+        Helping parents foster growth mindsets, emotional well-being, and communication skills through interactive workshops and practical exercises.
+      </div>
+      <div class="date-location">April 2025 | Lalitpur</div>
+    </div>
+  </div>
+
+  <div class="training-card" onclick="toggleCard(this)">
+    <img src="assets/images/corporate-empowerment.jpg" class="training-thumbnail" alt="Corporate Empowerment Program">
+    <div class="training-content">
+      <div class="training-header">
+        <h3>Corporate & Municipal Empowerment Program</h3>
+        <div class="subtitle"><span class="icon">🏢</span> Local Corporates & Municipalities</div>
+        <div class="type"><span class="icon">💼</span> Women's & Community Empowerment</div>
+      </div>
+      <div class="details">
+        Workshops for corporates, insurance companies, and municipalities to empower women and local communities with leadership, financial literacy, and skills development.
+      </div>
+      <div class="date-location">August 2025 | Bhaktapur</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Ishwor Shrestha. Contact: gamerking.yt0@gmail.com</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  function toggleCard(card) { card.classList.toggle('active'); }
+</script>
+</body>
+</html>

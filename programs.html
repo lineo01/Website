@@ -10,7 +10,7 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      <img src="assets/images/Main logo.jpg" alt="Logo" class="logo"  height=100px, style="border-radius: 50%;"/>
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="programs.html">Programs</a>
@@ -20,26 +20,49 @@
       </nav>
     </div>
   </header>
+<section class="container programs-section">
+  <h1>Our Programs</h1>
+  <p>Explore our transformative leadership and growth programs designed for students, educators, parents, corporates, and communities.</p>
 
-  <!-- Programs Section -->
-  <section class="container programs-section">
-    <h1>Our Programs</h1>
-    <p>Explore our transformative leadership and growth programs designed for students, educators, and parents.</p>
-    <div class="program-cards">
-      <div class="program-card">
-        <h2>Student Leadership Bootcamp</h2>
-        <p>Intensive program to develop leadership skills, emotional intelligence, and real-world problem solving.</p>
-      </div>
-      <div class="program-card">
-        <h2>Teacher Development Workshop</h2>
-        <p>Empowering teachers with modern teaching strategies, classroom management, and motivational tools.</p>
-      </div>
-      <div class="program-card">
-        <h2>Parenting & Growth Seminar</h2>
-        <p>Guiding parents to foster growth mindsets, emotional well-being, and strong communication skills.</p>
-      </div>
+  <div class="program-cards">
+
+    <!-- Student Leadership -->
+    <div class="program-card">
+      <img src="assets/images/studentsleadership.jpg" alt="Student Leadership Bootcamp">
+      <h2>Student Leadership Bootcamp</h2>
+      <p>Intensive program to develop leadership skills, emotional intelligence, and real-world problem solving for students.</p>
     </div>
-  </section>
+
+    <!-- Teacher Development -->
+    <div class="program-card">
+      <img src="assets/images/Teacherstraining.jpg" alt="Teacher Development Workshop">
+      <h2>Teacher Development Workshop</h2>
+      <p>Empowering teachers with modern teaching strategies, classroom management, and motivational tools.</p>
+    </div>
+
+    <!-- Parenting & Growth -->
+    <div class="program-card">
+      <img src="assets/images/parentstraining.jpg" alt="Parenting & Growth Seminar">
+      <h2>Parenting & Growth Seminar</h2>
+      <p>Guiding parents to foster growth mindsets, emotional well-being, and strong communication skills.</p>
+    </div>
+
+    <!-- Corporate & Insurance -->
+    <div class="program-card">
+      <img src="assets/images/salesandcoorporativetraining.jpg" alt="Corporate Leadership & Development">
+      <h2>Corporate Leadership & Development</h2>
+      <p>Leadership programs for corporate teams and insurance company staff to enhance productivity, collaboration, and motivation.</p>
+    </div>
+
+    <!-- Women & Community Empowerment -->
+    <div class="program-card">
+      <img src="assets/images/municipalitytraining.jpg" alt="Women & Community Empowerment">
+      <h2>Women & Community Empowerment</h2>
+      <p>Programs for municipalities and local communities to empower women and engage citizens in sustainable growth initiatives.</p>
+    </div>
+
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -50,6 +73,22 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Toggle "Read More"
+    const buttons = document.querySelectorAll('.toggle-desc');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.parentElement;
+        const full = card.querySelector('.full-desc');
+        if(full.style.display === "none") {
+          full.style.display = "block";
+          btn.textContent = "Show Less";
+        } else {
+          full.style.display = "none";
+          btn.textContent = "Read More";
+        }
+      });
+    });
   </script>
 </body>
 </html>

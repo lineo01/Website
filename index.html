@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Leadership & Growth Programs — Ishwor Shrestha</title>
-  <meta name="description" content="Transformative leadership and student development programs blending modern skills and timeless wisdom." />
+  <title>Ishwor Shrestha — Leadership & Growth Programs</title>
+  <meta name="description" content="Empowering students, teachers, and organizations through transformative training that blends modern strategies with timeless wisdom." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      <img src="assets/images/Main logo.jpg" alt="Logo" class="logo" />
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="programs.html">Programs</a>
@@ -19,22 +20,64 @@
         <a href="past-trainings.html">Past Trainings</a>
         <a href="#register" class="btn-cta">Register</a>
       </nav>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <h1>Transform Your Leadership & Life</h1>
-        <p>Join our professional development programs blending modern strategies with timeless wisdom for students and educators.</p>
+        <h1>Empowering Minds, Building Leaders</h1>
+        <p>We blend timeless values with modern education to create confident, ethical, and visionary individuals.</p>
         <div class="hero-ctas">
-          <a href="#register" class="btn-primary">Register Now</a>
-          <a href="announcements.html" class="btn-outline">See Current Programs</a>
+          <a href="#register" class="btn-primary">Join Now</a>
+          <a href="programs.html" class="btn-outline">Explore Programs</a>
         </div>
       </div>
       <div class="hero-media">
-        <img src="assets/images/hero.jpg" alt="Leadership Training" />
+        <img src="assets/images/leadership.png" alt="Leadership Training">
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings -->
+  <section class="offerings container">
+    <h2>Our Offerings</h2>
+    <div class="offerings-grid">
+      <div class="offering">Exam Boost Up Program</div>
+      <div class="offering">Student Training Programs</div>
+      <div class="offering">Teacher Training Programs</div>
+      <div class="offering">Parenting Education</div>
+      <div class="offering">Cooperative Training</div>
+      <div class="offering">Insurance Motivational Training</div>
+      <div class="offering">Corporate Leadership & Development</div>
+      <div class="offering">Vastu Consultation</div>
+      <div class="offering">Signature Analysis</div>
+      <div class="offering">Numerology & Healing Sessions</div>
+    </div>
+  </section>
+
+  <!-- Trusted By (Animated Logos) -->
+  <section class="trusted-by">
+    <h2>Trusted By Over 100+ Schools & 100,000+ Participants</h2>
+    <div class="logos-slider">
+      <div class="logos-track">
+        <img src="assets/logos/angels_heart.png" alt="Angles heart Secondary school">
+        <img src="assets/logos/Angelskids.png" alt="Angels heart National School">
+        <img src="assets/logos/himilayan.png" alt="Himilayan Boarding school">
+        <img src="assets/logos/st_joseph.png" alt="St joseph school">
+        <img src="assets/logos/Tarakeshwor.png" alt="Tarakeshwor">
+        <img src="assets/logos/manasalu.png" alt="Manasalu College">
+        <img src="assets/logos/imelife.png" alt="IME life insurance">
+        <img src="assets/logos/reliablelife.png" alt="Reliable Life Insurance ">
+        <img src="assets/logos/Vs niketan.png" alt="Vs Niketan">
+        <img src="assets/logos/tokha.png" alt="Tokha municipality">
+        <img src="assets/logos/srijanagyansagar.png" alt="srijana Gyansagar">
+        <img src="assets/logos/Theoldcapital.png" alt="The old Capital">
+        <img src="assets/logos/PABSON.png" alt="PABSON ">
+        <img src="assets/logos/deepshika.png" alt="Deepshikha ">
+
       </div>
     </div>
   </section>
@@ -43,20 +86,10 @@
   <section id="register" class="registration-section container">
     <h2>Register for a Program</h2>
     <p>Fill in your details below and we will get back to you.</p>
-
-    <form id="regForm"
-          action="https://script.google.com/macros/s/AKfycbxPB60tdVBQjG2PZ106sOuqeVcJqzNMILeFVupWhIoUeRWJ-skDdzAcr1h29CbDsmjsxg/exec"
-          method="POST"
-          target="hidden_iframe">
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Full Name" required />
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Email" required />
-      </div>
-      <div class="form-group">
-        <input type="tel" name="phone" placeholder="Phone" />
-      </div>
+    <form id="regForm" action="https://script.google.com/macros/s/AKfycbxPB60tdVBQjG2PZ106sOuqeVcJqzNMILeFVupWhIoUeRWJ-skDdzAcr1h29CbDsmjsxg/exec" method="POST" target="hidden_iframe">
+      <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
+      <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
+      <div class="form-group"><input type="tel" name="phone" placeholder="Phone"></div>
       <div class="form-group">
         <select name="program" required>
           <option value="" disabled selected>Select Program</option>
@@ -65,34 +98,31 @@
           <option value="Parenting & Growth Seminar">Parenting & Growth Seminar</option>
         </select>
       </div>
-      <div class="form-group">
-        <textarea name="message" placeholder="Message (Optional)" rows="3"></textarea>
-      </div>
+      <div class="form-group"><textarea name="message" placeholder="Message (Optional)" rows="3"></textarea></div>
       <button type="submit" class="btn-primary">Submit Registration</button>
       <div id="formStatus" class="form-status"></div>
     </form>
-
     <iframe name="hidden_iframe" style="display:none;" onload="formSubmitted()"></iframe>
   </section>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Ishwor Shrestha. Contact: gamerking.yt0@gmail.com</p>
+      <p>© <span id="year"></span> Ishwor Shrestha | Tarakeshwor, Kathmandu | 📞 9860424221 / 9823957199</p>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
   <script>
-    // Dynamic Year
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Form submission success handler
     function formSubmitted() {
       const status = document.getElementById('formStatus');
       status.textContent = '✅ Successfully submitted! We will contact you soon.';
       document.getElementById('regForm').reset();
       setTimeout(() => status.textContent = '', 5000);
+    }
+    function toggleMenu() {
+      document.querySelector('.nav').classList.toggle('open');
     }
   </script>
 </body>

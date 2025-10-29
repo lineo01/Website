@@ -1,16 +1,226 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Past Trainings — Ishwor Shrestha</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #1f3a60;
+      --accent: #efcb68;
+      --text: #333;
+      --light: #fafafa;
+      --radius: 15px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+header {
+  background: #1f3a60; /* Blue header background */
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+nav a {
+  text-decoration: none;
+  color: #fff; /* white links */
+  font-weight: 500;
+  margin: 0 0.9rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #efcb68; /* accent on hover */
+}
+
+.btn-cta {
+  background: #efcb68;
+  color: #1f3a60;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-cta:hover {
+  background: #fff;
+  color: #1f3a60;
+}
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Section */
+    .past-trainings-section {
+      padding: 4rem 0;
+    }
+
+    .past-trainings-section h1 {
+      font-family: "Playfair Display", serif;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .past-trainings-section p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 3rem;
+    }
+
+    /* Cards */
+    .training-card {
+      display: flex;
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: 0.3s ease;
+      border-left: 6px solid var(--accent);
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+
+    .training-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .training-thumbnail {
+      flex: 0 0 35%;
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      margin: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .training-card:hover .training-thumbnail {
+      transform: scale(1.05);
+    }
+
+    .training-content {
+      flex: 1;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .training-header h3 {
+      margin: 0 0 0.3rem;
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .type {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 0.3rem;
+    }
+
+    .details {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.4s ease;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .training-card.active .details {
+      max-height: 200px;
+      opacity: 1;
+      margin-top: 0.8rem;
+    }
+
+    .date-location {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .training-card {
+        flex-direction: column;
+      }
+
+      .training-thumbnail {
+        width: calc(100% - 30px);
+        height: 220px;
+        margin: 15px auto 0;
+        border-radius: 15px;
+      }
+
+      .training-content {
+        padding: 1rem 1.2rem 1.5rem;
+      }
+
+      .training-header h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+      }
+
+      .past-trainings-section p {
+        font-size: 1rem;
+      }
+
+      .training-card {
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <!-- Header -->
   <header class="site-header">
-    <div class="container header-inner">
-      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+    <div class="header-inner">
+      <img src="assets/images/Main logo.jpg" alt="Logo" class="logo"  height="100px" style="border-radius: 50%;" />
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="programs.html">Programs</a>
@@ -21,40 +231,17 @@
     </div>
   </header>
 
-  <!-- Past Trainings Section -->
   <section class="container past-trainings-section">
     <h1>Our Past Trainings</h1>
-    <p>Here are some of the programs we've successfully conducted for students, educators, and parents.</p>
+    <p>Successful programs for students, educators, parents, corporates, and local communities.</p>
 
-    <div class="grid">
-      <div class="program-card">
-        <h3>Student Leadership Bootcamp - Batch 1</h3>
-        <p>June 2025 | Kathmandu</p>
-      </div>
-      <div class="program-card">
-        <h3>Teacher Development Workshop - Online</h3>
-        <p>May 2025 | Virtual</p>
-      </div>
-      <div class="program-card">
-        <h3>Parenting & Growth Seminar</h3>
-        <p>April 2025 | Lalitpur</p>
-      </div>
-      <div class="program-card">
-        <h3>Student Leadership Bootcamp - Batch 2</h3>
-        <p>August 2025 | Bhaktapur</p>
-      </div>
-    </div>
+<div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/deepshika.jpg" class="training-thumbnail" alt="शिक्षक, अभिभावक र विद्यार्थी प्रशिक्षण कार्यक्रम–२०८१"> <div class="training-content"> <div class="training-header"> <h3>शिक्षक, अभिभावक र विद्यार्थी प्रशिक्षण कार्यक्रम–२०८१</h3> <div class="subtitle">Deepshikha High School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on शिक्षक, अभिभावक र विद्यार्थी प्रशिक्षण कार्यक्रम–२०८१. More specific details are not available in the source data. </div> <div class="date-location">Kartik 30, 2081 | Pokhara, Kaski</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/kshetragyan.jpg" class="training-thumbnail" alt="The Art of Effective Parenting"> <div class="training-content"> <div class="training-header"> <h3>The Art of Effective Parenting</h3> <div class="subtitle">Kshetragya School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on The Art of Effective Parenting. More specific details are not available in the source data. </div> <div class="date-location">Bhadra 23, 2080 | Bafal, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/oldcapital.jpg" class="training-thumbnail" alt="Parenting Programme"> <div class="training-content"> <div class="training-header"> <h3>Parenting Programme</h3> <div class="subtitle">The Old Capital Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Parenting Programme. More specific details are not available in the source data. </div> <div class="date-location">Not specified | Gorkha-8, Raniban</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/himchuli.jpg" class="training-thumbnail" alt="प्रेरणादायी कार्यक्रम (Teachers, Parents, Students)"> <div class="training-content"> <div class="training-header"> <h3>प्रेरणादायी कार्यक्रम (Teachers, Parents, Students)</h3> <div class="subtitle">Himshikhar Residential Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on प्रेरणादायी कार्यक्रम (Teachers, Parents, Students). More specific details are not available in the source data. </div> <div class="date-location">Falgun 9, 2080 | Lamjung</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/Gothatar.jpg" class="training-thumbnail" alt="Inspirational Program for Teachers and Parents"> <div class="training-content"> <div class="training-header"> <h3>Inspirational Program for Teachers and Parents</h3> <div class="subtitle">Gothatar English Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Inspirational Program for Teachers and Parents. More specific details are not available in the source data. </div> <div class="date-location">Not specified | Gothatar, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/tokhajanahit.jpg" class="training-thumbnail" alt="सहकारी सशक्तिकरण प्रशिक्षण कार्यक्रम"> <div class="training-content"> <div class="training-header"> <h3>सहकारी सशक्तिकरण प्रशिक्षण कार्यक्रम</h3> <div class="subtitle">Tokha Janahit Saving & Credit Cooperative Ltd.</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on सहकारी सशक्तिकरण प्रशिक्षण कार्यक्रम. More specific details are not available in the source data. </div> <div class="date-location">Mangsir 10, 2079 | Tokha-7, Kathmandu</div> </div> </div> <!-- <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/tulsipur.jpg" class="training-thumbnail" alt="जेष्ठ नागरिक, एकल महिला एवं बिनसरुपले सक्षम मानव सम्मान कार्यक्रम"> <div class="training-content"> <div class="training-header"> <h3>जेष्ठ नागरिक, एकल महिला एवं बिनसरुपले सक्षम मानव सम्मान कार्यक्रम</h3> <div class="subtitle">Tulsipur Sub-Metropolitan City, Ward No. 2 Office</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on जेष्ठ नागरिक, एकल महिला एवं बिनसरुपले सक्षम मानव सम्मान कार्यक्रम. More specific details are not available in the source data. </div> <div class="date-location">Chaitra 22, 2080 | Tulsipur, Dang</div> </div> </div> --> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/Vsniketan.jpg" class="training-thumbnail" alt="Student Career Counseling Program"> <div class="training-content"> <div class="training-header"> <h3>Student Career Counseling Program</h3> <div class="subtitle">V.S. Niketan Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Student Career Counseling Program. More specific details are not available in the source data. </div> <div class="date-location">Shrawan 20, 2081 | Tinkune, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/srijanagyansagar.jpg" class="training-thumbnail" alt="Career Counseling and College Selection Program"> <div class="training-content"> <div class="training-header"> <h3>Career Counseling and College Selection Program</h3> <div class="subtitle">Srijana Gyanasagar Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Career Counseling and College Selection Program. More specific details are not available in the source data. </div> <div class="date-location">Ashad 22, 2079 | Tarakeshwar-04, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/holyvision.jpg" class="training-thumbnail" alt="Teachers’ Professional Development Workshop"> <div class="training-content"> <div class="training-header"> <h3>Teachers’ Professional Development Workshop</h3> <div class="subtitle">Holy Vision Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Teachers’ Professional Development Workshop. More specific details are not available in the source data. </div> <div class="date-location">Shrawan 6, 2081 | Tahachal, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/pyramid.jpg" class="training-thumbnail" alt="The Art of Effective Parenting"> <div class="training-content"> <div class="training-header"> <h3>The Art of Effective Parenting</h3> <div class="subtitle">Pyramid Montessori</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on The Art of Effective Parenting. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 16, 2080 | Godawari</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/Rehdon.jpg" class="training-thumbnail" alt="The Art of Good Parenting"> <div class="training-content"> <div class="training-header"> <h3>The Art of Good Parenting</h3> <div class="subtitle">Rehdon College & School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on The Art of Good Parenting. More specific details are not available in the source data. </div> <div class="date-location">Shrawan 19, 2081 | Samakhusi, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/Malika.jpg" class="training-thumbnail" alt="National & International Level Training Program"> <div class="training-content"> <div class="training-header"> <h3>National & International Level Training Program</h3> <div class="subtitle">Malika Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on National & International Level Training Program. More specific details are not available in the source data. </div> <div class="date-location">Not specified | Simaltari, Gulmi</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/someshwar.jpg" class="training-thumbnail" alt="Life Coaching & Educational Training Program"> <div class="training-content"> <div class="training-header"> <h3>Life Coaching & Educational Training Program</h3> <div class="subtitle">Someshwar Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Life Coaching & Educational Training Program. More specific details are not available in the source data. </div> <div class="date-location">Ashwin 16–17, 2080 | Madi-1, Chitwan</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/besishar nagarpalika.jpg" class="training-thumbnail" alt="Positive Thinking and the Art of Happiness"> <div class="training-content"> <div class="training-header"> <h3>Positive Thinking and the Art of Happiness</h3> <div class="subtitle">Beshisahar Municipality</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Positive Thinking and the Art of Happiness. More specific details are not available in the source data. </div> <div class="date-location">Year 2080 | Chiti, Lamjung</div> </div> </div> <!-- <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/publicspeakingwomen.jpg" class="training-thumbnail" alt="Public Speaking & Leadership Development Training"> <div class="training-content"> <div class="training-header"> <h3>Public Speaking & Leadership Development Training</h3> <div class="subtitle">Women’s Consumer Committee & Tarkeshwor Municipality</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Public Speaking & Leadership Development Training. More specific details are not available in the source data. </div> <div class="date-location">Falgun 20–26, 2080 | Tarkeshwor-9, Kathmandu</div> </div> </div> --> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/maharishi.jpg" class="training-thumbnail" alt="Grade XI Orientation Program"> <div class="training-content"> <div class="training-header"> <h3>Grade XI Orientation Program</h3> <div class="subtitle">Maharshi College</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Grade XI Orientation Program. More specific details are not available in the source data. </div> <div class="date-location">Shrawan 15, 2082 | Gongabu, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/Himrsahmi.jpg" class="training-thumbnail" alt="Grade XI Orientation Program"> <div class="training-content"> <div class="training-header"> <h3>Grade XI Orientation Program</h3> <div class="subtitle">Him Rashmi High School/College</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Grade XI Orientation Program. More specific details are not available in the source data. </div> <div class="date-location">Shrawan 17, 2082 | Tarakeshwor-9, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/venusschool.jpg" class="training-thumbnail" alt="Teachers’ Development & Teamwork Workshop"> <div class="training-content"> <div class="training-header"> <h3>Teachers’ Development & Teamwork Workshop</h3> <div class="subtitle">Venus English School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Teachers’ Development & Teamwork Workshop. More specific details are not available in the source data. </div> <div class="date-location">Asar 27, 2082 | Bhimsengola, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/illamnagarpalika.jpg" class="training-thumbnail" alt="Orientation on Positive Thinking & Life Skills"> <div class="training-content"> <div class="training-header"> <h3>Orientation on Positive Thinking & Life Skills</h3> <div class="subtitle">Ilam Municipality</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Orientation on Positive Thinking & Life Skills. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 21–23, 2080 | Ilam</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/stjoseph.jpg" class="training-thumbnail" alt="Teachers’ Energy Boost-up & School Development Training"> <div class="training-content"> <div class="training-header"> <h3>Teachers’ Energy Boost-up & School Development Training</h3> <div class="subtitle">St. Joseph’s English Academy</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Teachers’ Energy Boost-up & School Development Training. More specific details are not available in the source data. </div> <div class="date-location">Shrawan 25, 2082 | Budhanilkantha-7, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/shishumilanschool.jpg" class="training-thumbnail" alt="Innovative Classrooms for Joyful Learning Workshop"> <div class="training-content"> <div class="training-header"> <h3>Innovative Classrooms for Joyful Learning Workshop</h3> <div class="subtitle">Shishu Milan English School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Innovative Classrooms for Joyful Learning Workshop. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 13, 2081 | Budhanilkantha-10, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/tokhaabhinayansahakari.jpg" class="training-thumbnail" alt="Financial Management & Senior Citizen Honor Program"> <div class="training-content"> <div class="training-header"> <h3>Financial Management & Senior Citizen Honor Program</h3> <div class="subtitle">Tokha Abhiyan Saving & Credit Co-operative Ltd.</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Financial Management & Senior Citizen Honor Program. More specific details are not available in the source data. </div> <div class="date-location">Jestha 24, 2080 | Tokha-3, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/Tokhamunicipality.jpg" class="training-thumbnail" alt="जेष्ठ नागरिक, एकल महिला एवं बिनसरुपले सक्षम मानव सम्मान कार्यक्रम"> <div class="training-content"> <div class="training-header"> <h3>जेष्ठ नागरिक, एकल महिला एवं बिनसरुपले सक्षम मानव सम्मान कार्यक्रम</h3> <div class="subtitle">Tosha Municipality, Ward No. 2 Office</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on जेष्ठ नागरिक, एकल महिला एवं बिनसरुपले सक्षम मानव सम्मान कार्यक्रम. More specific details are not available in the source data. </div> <div class="date-location">Chaitra 22, 2080 | Chandeshwori, Kavrepalanchok</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/milestone.jpg" class="training-thumbnail" alt="The Art of Conscious Parenting"> <div class="training-content"> <div class="training-header"> <h3>The Art of Conscious Parenting</h3> <div class="subtitle">Milestone Youth English School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on The Art of Conscious Parenting. More specific details are not available in the source data. </div> <div class="date-location">Jestha 17, 2082 | Nagarjun, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/oasisacademy.jpg" class="training-thumbnail" alt="मनोपरामर्श तथा प्रेरणात्मक कार्यक्रम"> <div class="training-content"> <div class="training-header"> <h3>मनोपरामर्श तथा प्रेरणात्मक कार्यक्रम</h3> <div class="subtitle">Oasis Model Academy & Kumudini English Boarding School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on मनोपरामर्श तथा प्रेरणात्मक कार्यक्रम. More specific details are not available in the source data. </div> <div class="date-location">Falgun 23, 2079 | Bardghat-16, Nawalparasi</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/oasisacademy.jpg" class="training-thumbnail" alt="Educational Transformation Workshop"> <div class="training-content"> <div class="training-header"> <h3>Educational Transformation Workshop</h3> <div class="subtitle">OSIS Model Academy</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Educational Transformation Workshop. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 19–20, 2082 | Bardghat-16, Nawalparasi</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/milestoneyouth.jpg" class="training-thumbnail" alt="Student Success Blueprint Training"> <div class="training-content"> <div class="training-header"> <h3>Student Success Blueprint Training</h3> <div class="subtitle">Milestone Youth English School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Student Success Blueprint Training. More specific details are not available in the source data. </div> <div class="date-location">Jestha 21, 2082 | Nagarjun, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/EverestEducation.jpg" class="training-thumbnail" alt="अभिभावक प्रशिक्षण / Inspirational Program"> <div class="training-content"> <div class="training-header"> <h3>अभिभावक प्रशिक्षण / Inspirational Program</h3> <div class="subtitle">Everest Smart Education Academy</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on अभिभावक प्रशिक्षण / Inspirational Program. More specific details are not available in the source data. </div> <div class="date-location">Year 2080 | Birtamod-04, Jhapa</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/venusschool.jpg" class="training-thumbnail" alt="Teachers’ Development & School Growth Workshop"> <div class="training-content"> <div class="training-header"> <h3>Teachers’ Development & School Growth Workshop</h3> <div class="subtitle">Venus English School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Teachers’ Development & School Growth Workshop. More specific details are not available in the source data. </div> <div class="date-location">Shrawan 18, 2082 | Bhimsengola, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/milestoneyouthschool.jpg" class="training-thumbnail" alt="The Art of Effective Parenting"> <div class="training-content"> <div class="training-header"> <h3>The Art of Effective Parenting</h3> <div class="subtitle">Milestone Youth English School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on The Art of Effective Parenting. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 23, 2081 | Nagarjun, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/PABSON.jpg" class="training-thumbnail" alt="SEE/BLE Boost-up & Counselling Program"> <div class="training-content"> <div class="training-header"> <h3>SEE/BLE Boost-up & Counselling Program</h3> <div class="subtitle">RAMGRAM PABSON</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on SEE/BLE Boost-up & Counselling Program. More specific details are not available in the source data. </div> <div class="date-location">Not specified | Ramgram, Nawalparasi</div> </div> </div> <!-- <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/kedarnarmada.jpg" class="training-thumbnail" alt="Teachers’ Capacity Building & Growth Workshop"> <div class="training-content"> <div class="training-header"> <h3>Teachers’ Capacity Building & Growth Workshop</h3> <div class="subtitle">Kedar Narmada Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Teachers’ Capacity Building & Growth Workshop. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 27–28, 2080 | Gorkha</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/maheshsanskrit.jpg" class="training-thumbnail" alt="Inspirational Program / Student Counselling"> <div class="training-content"> <div class="training-header"> <h3>Inspirational Program / Student Counselling</h3> <div class="subtitle">Mahesh Sanskrit Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Inspirational Program / Student Counselling. More specific details are not available in the source data. </div> <div class="date-location">Ashwin 18, 2080 | Dang</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/shreesarswati.jpg" class="training-thumbnail" alt="Life Coaching, Teachers Training & Parents Program"> <div class="training-content"> <div class="training-header"> <h3>Life Coaching, Teachers Training & Parents Program</h3> <div class="subtitle">Shree Saraswati Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Life Coaching, Teachers Training & Parents Program. More specific details are not available in the source data. </div> <div class="date-location">Shrawan 7, 2082 | Tarakeshwor-5, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/patanschool.jpg" class="training-thumbnail" alt="Teacher Development Workshop"> <div class="training-content"> <div class="training-header"> <h3>Teacher Development Workshop</h3> <div class="subtitle">Patan Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Teacher Development Workshop. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 12, 2081 | Lalitpur</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/shreeAdarshaschool.jpg" class="training-thumbnail" alt="Teachers’ Training & Students’ Inspirational Program"> <div class="training-content"> <div class="training-header"> <h3>Teachers’ Training & Students’ Inspirational Program</h3> <div class="subtitle">Shree Adarsha Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Teachers’ Training & Students’ Inspirational Program. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 19, 2080 | Tokha-7, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/TokhaTeacherscapacity.jpg" class="training-thumbnail" alt="Teachers’ Capacity Building Program"> <div class="training-content"> <div class="training-header"> <h3>Teachers’ Capacity Building Program</h3> <div class="subtitle">Tokha Municipality, Ward No. 3 Office</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Teachers’ Capacity Building Program. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 19, 2080 | Tokha-3, Kathmandu</div> </div> </div> <div class="training-card" onclick="toggleCard(this)"> <img src="assets/images/past_training/tribhuvanadarsha.jpg" class="training-thumbnail" alt="Educational Development Workshop"> <div class="training-content"> <div class="training-header"> <h3>Educational Development Workshop</h3> <div class="subtitle">Tribhuvan Adarsha Secondary School</div> <div class="type">Training/Program</div> </div> <div class="details"> This program focuses on Educational Development Workshop. More specific details are not available in the source data. </div> <div class="date-location">Baisakh 23, 2080 | Bhaktapur</div> </div> </div> -->
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Ishwor Shrestha. Contact: gamerking.yt0@gmail.com</p>
-    </div>
-  </footer>
-
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    function toggleCard(card) {
+      card.classList.toggle('active');
+    }
   </script>
 </body>
 </html>
